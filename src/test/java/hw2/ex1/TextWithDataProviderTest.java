@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObject.HomePage;
@@ -20,11 +19,11 @@ public class TextWithDataProviderTest {
     private HomePage homePage;
 
     @AfterClass
-    public void afterClass(){
-        driver.close();
+    public void afterClass() {
+        driver.quit();
     }
 
-    @DataProvider(name = "text under image",parallel = true)
+    @DataProvider(name = "text under image", parallel = true)
     public Object[][] underText() {
         return new Object[][]{
                 {0, "To include good practices\nand ideas from successful\nEPAM project"},
@@ -43,8 +42,7 @@ public class TextWithDataProviderTest {
         driver.manage().window().maximize();
 
         //1 Open test site URL
-        homePage = new HomePage();
-        homePage.open(driver);
+        driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2 Asserting 4 texts below 4 pictures on the Index Page
         List<WebElement> textsUnderIcons = driver.findElements(By.cssSelector(".benefit-txt"));
