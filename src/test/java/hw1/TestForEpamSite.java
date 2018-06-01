@@ -48,16 +48,13 @@ public class TestForEpamSite {
 
         List<WebElement> headerNavList = driver.findElements(By.cssSelector(".nav > li"));
 
-        //5 Assert that there are 4 items on the header section
+        //5 Assert that there are 4 items on the header section are displayed and they have proper texts
         assertEquals(headerNavList.size(), 4);
 
-        //5 Assert that items on the header section are displayed
-        assertTrue(headerNavList.get(0).isDisplayed());
-        assertTrue(headerNavList.get(1).isDisplayed());
-        assertTrue(headerNavList.get(2).isDisplayed());
-        assertTrue(headerNavList.get(3).isDisplayed());
+        for (WebElement webElement : headerNavList) {
+            assertTrue(webElement.isDisplayed());
+        }
 
-        //5 Assert that items on the header section have proper texts
         assertEquals(headerNavList.get(0).getText(), "HOME");
         assertEquals(headerNavList.get(1).getText(), "CONTACT FORM");
         assertEquals(headerNavList.get(2).getText(), "SERVICE");
@@ -65,27 +62,22 @@ public class TestForEpamSite {
 
         List<WebElement> imagesFromPage = driver.findElements(By.cssSelector(".benefit-icon"));
 
-        //6 Assert that there are 4 images on the index page
+        //6 Assert that there are 4 images on the Index Page and they are displayed
         assertEquals(imagesFromPage.size(), 4);
 
-        //6 Assert that images on the index page are displayed
-        assertTrue(imagesFromPage.get(0).isDisplayed());
-        assertTrue(imagesFromPage.get(1).isDisplayed());
-        assertTrue(imagesFromPage.get(2).isDisplayed());
-        assertTrue(imagesFromPage.get(3).isDisplayed());
+        for (WebElement element : imagesFromPage) {
+            assertTrue(element.isDisplayed());
+        }
 
         List<WebElement> textsUnderIcons = driver.findElements(By.cssSelector(".benefit-txt"));
 
-        //7 Assert that there are 4 texts under icons on the Index page
+        //7 Assert that there are 4 texts on the Index Page under icons and they have proper text
         assertEquals(textsUnderIcons.size(), 4);
 
-        //7 Assert that texts under icons on the index page are displayed
-        assertTrue(textsUnderIcons.get(0).isDisplayed());
-        assertTrue(textsUnderIcons.get(1).isDisplayed());
-        assertTrue(textsUnderIcons.get(2).isDisplayed());
-        assertTrue(textsUnderIcons.get(3).isDisplayed());
-
-        //7 Assert that texts under icons on the index page have proper text
+        for (WebElement element : textsUnderIcons) {
+            assertTrue(element.isDisplayed());
+        }
+        
         assertEquals(textsUnderIcons.get(0).getText(), "To include good practices\n" +
                 "and ideas from successful\nEPAM project");
         assertEquals(textsUnderIcons.get(1).getText(), "To be flexible and\n" +
