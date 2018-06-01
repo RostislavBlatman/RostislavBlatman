@@ -10,9 +10,10 @@ import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
-@Test(groups = {"Regression"})
+
 public class RegressionGroupOfThreeSimpleTests {
 
+    @Test(groups = {"Regression"})
     public void SimpleTest1() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("download.default_directory", "target");
@@ -39,6 +40,7 @@ public class RegressionGroupOfThreeSimpleTests {
         driver.close();
     }
 
+    @Test(groups = {"Regression"})
     public void SimpleTest2() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("download.default_directory", "target");
@@ -65,6 +67,7 @@ public class RegressionGroupOfThreeSimpleTests {
         driver.close();
     }
 
+    @Test(groups = {"Regression"})
     public void SimpleTest3() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("download.default_directory", "target");
