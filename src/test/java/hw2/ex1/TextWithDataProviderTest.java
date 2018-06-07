@@ -4,24 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pageObject.HomePage;
 
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
 public class TextWithDataProviderTest {
-
-    private WebDriver driver;
-    private HomePage homePage;
-
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
 
     @DataProvider(name = "text under image", parallel = true)
     public Object[][] underText() {
@@ -38,7 +28,7 @@ public class TextWithDataProviderTest {
     @Test(dataProvider = "text under image")
     public void textUnderImageTest(int indexImage, String underText) {
 
-        driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         //1 Open test site URL
