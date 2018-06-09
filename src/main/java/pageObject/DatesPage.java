@@ -2,19 +2,24 @@ package pageObject;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DatesPage {
-
-    private SelenideElement leftSlider = $("div:nth-child(2) > div > a:nth-child(1)");
-    private SelenideElement leftSliderSpan = $("div:nth-child(2) > div > a:nth-child(1) > span");
-    private SelenideElement rightSlider = $("a:nth-child(3)");
-    private SelenideElement rightSliderSpan = $("a:nth-child(3) > span");
-    private SelenideElement sliderRoad = $("div .uui-slider");
-    private SelenideElement logRows = $(".info-panel-body-log > .info-panel-section");
+    @FindBy(css = "div:nth-child(2) > div > a:nth-child(1)")
+    private SelenideElement leftSlider;
+    @FindBy(css = "div:nth-child(2) > div > a:nth-child(1) > span")
+    private SelenideElement leftSliderSpan;
+    @FindBy(css = "a:nth-child(3)")
+    private SelenideElement rightSlider;
+    @FindBy(css = "a:nth-child(3) > span")
+    private SelenideElement rightSliderSpan;
+    @FindBy(css = "div .uui-slider")
+    private SelenideElement sliderRoad;
+    @FindBy(css = ".info-panel-body-log > .info-panel-section")
+    private SelenideElement logRows;
 
     public void openDatesPage() {
         open("https://epam.github.io/JDI/dates.html");

@@ -2,29 +2,39 @@ package pageObject;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Condition.attribute;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DifferentElements {
-
-    private SelenideElement title = $("title");
-    private ElementsCollection checkboxes = $$(".label-checkbox");
-    private ElementsCollection radios = $$(".label-radio");
-    private SelenideElement dropdown = $("div.colors > select");
-    private ElementsCollection buttons = $$("div.main-content .uui-button");
-    private SelenideElement leftSection = $("div[name='navigation-sidebar']");
-    private SelenideElement rightSection = $("div[name='log-sidebar']");
-    private SelenideElement checkboxWater = $(".label-checkbox:nth-child(1)");
-    private SelenideElement checkboxWind = $(".label-checkbox:nth-child(3)");
-    private SelenideElement lastLog = $(".panel-body-list.logs li:nth-child(1)");
-    private SelenideElement radioSelen = $(".label-radio:nth-child(4)");
-    private SelenideElement dropdownColors = $("div.colors");
-    private SelenideElement dropdownColorYellow = $(".colors option:nth-child(4)");
+    @FindBy(css = "title")
+    private SelenideElement title;
+    @FindBy(css = ".label-checkbox")
+    private ElementsCollection checkboxes;
+    @FindBy(css = ".label-radio")
+    private ElementsCollection radios;
+    @FindBy(css = "div.colors > select")
+    private SelenideElement dropdown;
+    @FindBy(css = "div.main-content .uui-button")
+    private ElementsCollection buttons;
+    @FindBy(css = "div[name='navigation-sidebar']")
+    private SelenideElement leftSection;
+    @FindBy(css = "div[name='log-sidebar']")
+    private SelenideElement rightSection;
+    @FindBy(css = ".label-checkbox:nth-child(1)")
+    private SelenideElement checkboxWater;
+    @FindBy(css = ".label-checkbox:nth-child(3)")
+    private SelenideElement checkboxWind;
+    @FindBy(css = ".panel-body-list.logs li:nth-child(1)")
+    private SelenideElement lastLog;
+    @FindBy(css = ".label-radio:nth-child(4)")
+    private SelenideElement radioSelen;
+    @FindBy(css = "div.colors")
+    private SelenideElement dropdownColors;
+    @FindBy(css = ".colors option:nth-child(4)")
+    private SelenideElement dropdownColorYellow;
 
     public void openDifferentElements() {
         open("https://epam.github.io/JDI/different-elements.html");

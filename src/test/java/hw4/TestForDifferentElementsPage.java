@@ -1,6 +1,6 @@
 package hw4;
 
-import com.codeborne.selenide.Configuration;
+import base.Homework4Base;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.DifferentElements;
@@ -9,21 +9,21 @@ import pageObject.HomePageSelenide;
 import static com.codeborne.selenide.Selenide.page;
 import static enums.Users.PITER_CHAILOVSKII;
 
-public class TestForDifferentElementsPage {
+public class TestForDifferentElementsPage extends Homework4Base {
 
-    HomePageSelenide homePage;
-    DifferentElements difElements;
+    private HomePageSelenide homePage;
+    private DifferentElements difElements;
 
     @BeforeClass
-    public void beforeClass() {
-        Configuration.browser = "chrome";
-        Configuration.screenshots = false;
+    public void beforeClass(){
+
+        homePage = page(HomePageSelenide.class);
+        difElements = page(DifferentElements.class);
+
     }
 
     @Test
-    public void simpleTest() {
-        homePage = page(HomePageSelenide.class);
-        difElements = page(DifferentElements.class);
+    public void testDifferentPageContent() {
 
         //1 Open test site by URL
         homePage.openHomePage();

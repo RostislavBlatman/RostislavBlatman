@@ -1,6 +1,6 @@
 package hw4;
 
-import com.codeborne.selenide.Configuration;
+import base.Homework4Base;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.DatesPage;
@@ -9,22 +9,21 @@ import pageObject.HomePageSelenide;
 import static com.codeborne.selenide.Selenide.page;
 import static enums.Users.PITER_CHAILOVSKII;
 
-public class TestForDatesPage {
+public class TestForDatesPage extends Homework4Base {
 
-    HomePageSelenide homePage;
-    DatesPage datesPage;
+    private HomePageSelenide homePage;
+    private DatesPage datesPage;
 
     @BeforeClass
-    public void beforeClass() {
-        Configuration.browser = "chrome";
-        Configuration.screenshots = false;
-    }
-
-    @Test
-    public void simpleTest() {
+    public void beforeClass(){
 
         homePage = page(HomePageSelenide.class);
         datesPage = page(DatesPage.class);
+
+    }
+
+    @Test
+    public void testDatesPageContent() {
 
         //1 Open test site by URL
         homePage.openHomePage();
