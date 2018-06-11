@@ -1,51 +1,27 @@
 package hw2.ex3;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
-import static java.lang.System.setProperty;
 
-
-public class IncludeAnnotationsInSimpleTest {
-
-    private WebDriver driver;
-
-    @BeforeSuite
-    public void beforeSuite(){
-        setProperty("webdriver.chrome.driver", "chromedriver.exe");
-    }
-
-    @AfterSuite
-    public void afterSuite(){
-        System.out.println(System.currentTimeMillis());
-    }
-
-    @BeforeClass
-    public void beforeClass(){
-        driver = new ChromeDriver();
-    }
-
-    @AfterClass
-    public void afterClass(){
-        driver.close();
-    }
+public class IncludeAnnotationsInSimpleTest extends BaseTest {
 
     @BeforeMethod
-    public void beforeMethod(){
+    public void beforeMethod() {
         driver.manage().window().maximize();
     }
+
     @AfterMethod
-    public void afterMethod(){
+    public void afterMethod() {
         System.out.println(driver.getTitle());
     }
-
 
     @Test
     public void SimpleTest1() {

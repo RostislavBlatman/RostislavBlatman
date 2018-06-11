@@ -14,7 +14,34 @@ import java.util.HashMap;
 public class RegressionGroupOfThreeSimpleTests {
 
     @Test(groups = {"Regression"})
-    public void SimpleTest1() {
+    public void simpleTest1() {
+        HashMap<String, Object> chromePrefs = new HashMap<>();
+        chromePrefs.put("download.default_directory", "target");
+
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", chromePrefs);
+
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.navigate().to("https://epam.github.io/JDI/index.html");
+        Assert.assertEquals(driver.getTitle(), "Home Page");
+
+        WebElement userIcon = driver.findElement(By.cssSelector(".profile-photo"));
+        userIcon.click();
+
+        driver.findElement(By.cssSelector("#Name")).sendKeys("epam");
+        driver.findElement(By.cssSelector("#Password")).sendKeys("1234");
+        driver.findElement(By.cssSelector(".form-horizontal button[type = 'submit']")).click();
+
+        WebElement userName = driver.findElement(By.cssSelector(".profile-photo span"));
+        Assert.assertTrue(userName.isDisplayed());
+        Assert.assertEquals(userName.getText(), "PITER CHAILOVSKII");
+
+        driver.close();
+    }
+
+    @Test(groups = {"Regression"})
+    public void simpleTest2() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("download.default_directory", "target");
 
@@ -41,34 +68,7 @@ public class RegressionGroupOfThreeSimpleTests {
     }
 
     @Test(groups = {"Regression"})
-    public void SimpleTest2() {
-        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-        chromePrefs.put("download.default_directory", "target");
-
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", chromePrefs);
-
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.navigate().to("https://epam.github.io/JDI/index.html");
-        Assert.assertEquals(driver.getTitle(), "Home Page");
-
-        WebElement userIcon = driver.findElement(By.cssSelector(".profile-photo"));
-        userIcon.click();
-
-        driver.findElement(By.cssSelector("#Name")).sendKeys("epam");
-        driver.findElement(By.cssSelector("#Password")).sendKeys("1234");
-        driver.findElement(By.cssSelector(".form-horizontal button[type = 'submit']")).click();
-
-        WebElement userName = driver.findElement(By.cssSelector(".profile-photo span"));
-        Assert.assertTrue(userName.isDisplayed());
-        Assert.assertEquals(userName.getText(), "PITER CHAILOVSKII");
-
-        driver.close();
-    }
-
-    @Test(groups = {"Regression"})
-    public void SimpleTest3() {
+    public void simpleTest3() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("download.default_directory", "target");
 

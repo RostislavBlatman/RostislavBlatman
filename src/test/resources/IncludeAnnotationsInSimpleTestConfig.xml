@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="test with all annotations for hw2 ex3" verbose="1" >
-    <test name="Test with annotations" >
+<suite name="test with all annotations for hw2 ex3" verbose="1">
+    <test name="Test with annotations">
         <classes>
-            <class name="hw2.ex3.IncludeAnnotationsInSimpleTest" />
+            <class name="hw2.ex3.IncludeAnnotationsInSimpleTest"/>
         </classes>
     </test>
 </suite>

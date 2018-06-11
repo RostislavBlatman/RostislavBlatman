@@ -15,7 +15,7 @@ public class TestForDatesPage extends Homework4Base {
     private DatesPage datesPage;
 
     @BeforeClass
-    public void beforeClass(){
+    public void beforeClass() {
 
         homePage = page(HomePageSelenide.class);
         datesPage = page(DatesPage.class);

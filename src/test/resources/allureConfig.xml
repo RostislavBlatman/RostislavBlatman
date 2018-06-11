@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Simple Suite" parallel="methods" thread-count="3" verbose="1">
+    <test name="Test scope 1">
+        <packages>
+            <package name="hw4"/>
+        </packages>
+        <classes>
+            <class name="hw5.TestForDifferentElementsPageAllure"/>
+        </classes>
+    </test>
+</suite>

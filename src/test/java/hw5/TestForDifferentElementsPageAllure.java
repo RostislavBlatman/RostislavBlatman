@@ -1,24 +1,31 @@
-package hw4;
+package hw5;
 
 import base.Homework4Base;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import listeners.AllureAttachmentListener;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObject.DifferentElements;
+import pageObject.DifferentElementsAllure;
 import pageObject.HomePageSelenide;
 
 import static com.codeborne.selenide.Selenide.page;
 import static enums.Users.PITER_CHAILOVSKII;
 
-public class TestForDifferentElementsPage extends Homework4Base {
+@Feature("Different elements page")
+@Story("Login on 'Home page' as PITER CHAILOVSKY and check 'Different elements' interface")
+@Listeners(AllureAttachmentListener.class)
+public class TestForDifferentElementsPageAllure extends Homework4Base {
 
     private HomePageSelenide homePage;
-    private DifferentElements difElements;
+    private DifferentElementsAllure difElements;
 
     @BeforeClass
     public void beforeClass() {
 
         homePage = page(HomePageSelenide.class);
-        difElements = page(DifferentElements.class);
+        difElements = page(DifferentElementsAllure.class);
 
     }
 
@@ -78,7 +85,8 @@ public class TestForDifferentElementsPage extends Homework4Base {
         difElements.checkSelectColor();
 
         //17 Assert that for dropdown there is a log row and value is corresponded to the selected value. 
-        difElements.checkColorLog("Yellow");
+        difElements.checkColorLog("Blue"); //specially made unsuccessful
+
 
         //18 Unselect and assert checkboxes
         difElements.checkSelectCheckboxes();

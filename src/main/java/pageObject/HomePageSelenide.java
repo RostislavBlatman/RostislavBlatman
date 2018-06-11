@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 
 public class HomePageSelenide {
     @FindBy(css = "title")
@@ -78,38 +78,38 @@ public class HomePageSelenide {
             image.shouldBe(visible);
         }
         textsUnderIcons.shouldHaveSize(4);
-        for (SelenideElement text : textsUnderIcons){
+        for (SelenideElement text : textsUnderIcons) {
             text.shouldBe(visible);
         }
         mainText.shouldBe(visible);
         subText.shouldBe(visible);
     }
 
-    public void checkHeaderServiceDropdown(){
+    public void checkHeaderServiceDropdown() {
         headerServiceDropdown.click();
-        headerServiceMenu.shouldHave(texts("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE","USER TABLE",
+        headerServiceMenu.shouldHave(texts("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE", "USER TABLE",
                 "TABLE WITH PAGES", "DIFFERENT ELEMENTS", "PERFORMANCE"));
-        for(SelenideElement element : headerServiceMenu){
+        for (SelenideElement element : headerServiceMenu) {
             element.shouldBe(visible);
         }
     }
 
-    public void checkLeftServiceDropdown(){
+    public void checkLeftServiceDropdown() {
         leftServiceDropdown.click();
-        leftServiceMenu.shouldHave(texts("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE","USER TABLE",
+        leftServiceMenu.shouldHave(texts("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE", "USER TABLE",
                 "TABLE WITH PAGES", "DIFFERENT ELEMENTS", "PERFORMANCE"));
-        for(SelenideElement element : leftServiceMenu){
+        for (SelenideElement element : leftServiceMenu) {
             element.shouldBe(visible);
         }
 
     }
 
-    public void openDifferentElements(){
+    public void openDifferentElements() {
         headerServiceDropdown.click();
         difElements.click();
     }
 
-    public void openDatesPage(){
+    public void openDatesPage() {
         headerServiceDropdown.click();
         dates.click();
     }

@@ -1,17 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Ordered by smoke group" verbose="1" >
+<suite name="Ordered by smoke group" verbose="1">
 
-    <test name="Smoke tests" >
+    <test name="Smoke tests">
         <groups>
             <run>
-                <exclude name="Regression" />
-                <include name="Smoke" />
+                <exclude name="Regression"/>
+                <include name="Smoke"/>
             </run>
         </groups>
         <packages>
-            <package name="hw2.ex2" />
+            <package name="hw2.ex2"/>
         </packages>
     </test>
-
 </suite>

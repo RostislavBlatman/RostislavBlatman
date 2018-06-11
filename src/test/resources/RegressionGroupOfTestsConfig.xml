@@ -1,16 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Ordered by regression group" verbose="1" >
+<suite name="Ordered by regression group" verbose="1">
 
-    <test name="Regression tests" >
+    <test name="Regression tests">
         <groups>
             <run>
-                <exclude name="Smoke" />
-                <include name="Regression" />
+                <exclude name="Smoke"/>
+                <include name="Regression"/>
             </run>
         </groups>
         <packages>
-            <package name="hw2.ex2" />
+            <package name="hw2.ex2"/>
         </packages>
     </test>
 

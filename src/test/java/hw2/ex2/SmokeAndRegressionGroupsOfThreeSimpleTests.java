@@ -37,6 +37,7 @@ public class SmokeAndRegressionGroupsOfThreeSimpleTests {
 
         driver.close();
     }
+
     @Test(groups = {"Smoke"})
     public void SimpleTest2() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
@@ -63,6 +64,7 @@ public class SmokeAndRegressionGroupsOfThreeSimpleTests {
 
         driver.close();
     }
+
     @Test(groups = {"Regression"})
     public void SimpleTest3() {
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();

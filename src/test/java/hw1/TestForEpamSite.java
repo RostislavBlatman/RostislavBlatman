@@ -77,7 +77,7 @@ public class TestForEpamSite {
         for (WebElement element : textsUnderIcons) {
             assertTrue(element.isDisplayed());
         }
-        
+
         assertEquals(textsUnderIcons.get(0).getText(), "To include good practices\n" +
                 "and ideas from successful\nEPAM project");
         assertEquals(textsUnderIcons.get(1).getText(), "To be flexible and\n" +

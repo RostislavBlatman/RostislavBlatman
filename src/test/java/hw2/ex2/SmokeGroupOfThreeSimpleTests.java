@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 
 
-
 public class SmokeGroupOfThreeSimpleTests {
 
     @Test(groups = {"Smoke"})
