@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.page;
 import static enums.Users.PITER_CHAILOVSKII;
 
 @Feature("Different elements page")
-@Story("Login on 'Home page' as PITER CHAILOVSKY and check 'Different elements' interface")
+@Story("Login on 'Home page' as PITER CHAILOVSKY and check 'Different elements' interface with a specially broken test")
 @Listeners(AllureAttachmentListener.class)
 public class TestForDifferentElementsPageAllure extends Homework4Base {
 

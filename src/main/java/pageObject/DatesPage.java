@@ -2,6 +2,7 @@ package pageObject;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
@@ -21,10 +22,12 @@ public class DatesPage {
     @FindBy(css = ".info-panel-body-log > .info-panel-section")
     private SelenideElement logRows;
 
+    @Step("Open Dates page")
     public void openDatesPage() {
         open("https://epam.github.io/JDI/dates.html");
     }
 
+    @Step("Set slider position")
     public void setSliderPosition(int leftSliderPosition, int rightSliderPosition) {
 
         int sliderRoadSize = sliderRoad.getSize().width;
@@ -53,6 +56,7 @@ public class DatesPage {
 
     }
 
+    @Step("Check log rows for sliders")
     public void checkLogRowsForSliders(String text) {
         logRows.shouldHave(text(text));
     }

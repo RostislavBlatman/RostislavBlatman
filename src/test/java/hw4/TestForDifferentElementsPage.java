@@ -1,7 +1,11 @@
 package hw4;
 
 import base.Homework4Base;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import listeners.AllureAttachmentListener;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObject.DifferentElements;
 import pageObject.HomePageSelenide;
@@ -9,6 +13,9 @@ import pageObject.HomePageSelenide;
 import static com.codeborne.selenide.Selenide.page;
 import static enums.Users.PITER_CHAILOVSKII;
 
+@Feature("Different elements page")
+@Story("Login on 'Home page' as PITER CHAILOVSKY and check 'Different elements' interface")
+@Listeners(AllureAttachmentListener.class)
 public class TestForDifferentElementsPage extends Homework4Base {
 
     private HomePageSelenide homePage;
