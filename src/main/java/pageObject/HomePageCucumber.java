@@ -69,10 +69,12 @@ public class HomePageCucumber {
     @When("I login as user (.+)")
     public void login(String users) {
         Users user = Users.valueOf(users);
-        userIcon.click();
-        loginInput.sendKeys(user.login);
-        passwordInput.sendKeys(user.password);
-        submitButton.click();
+        if(!userIcon.has(text(user.name))) {
+            userIcon.click();
+            loginInput.sendKeys(user.login);
+            passwordInput.sendKeys(user.password);
+            submitButton.click();
+        }
     }
 
     @Then("Home Page is the browser title")

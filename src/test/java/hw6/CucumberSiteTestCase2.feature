@@ -11,18 +11,18 @@ Feature: User Table Page
     Then User table contain correct values for numbers and users
       | Number  | User              |
       | 1       | Roman             |
-      | 2       | Sergey Ivan        |
+      | 2       | Sergey Ivan       |
       | 3       | Vladzimir         |
-      | 4       | Helen Bennett      |
+      | 4       | Helen Bennett     |
       | 5       | Yoshi Tannamuri   |
       | 6       | Giovanni Rovelli  |
 
     When I check Description column of Users table
     Then All cells of 'Description' column contains text
-      | Number | Description                  |
-      | 1      | Lorem ipsum                  |
-      | 2      | Lorem ipsum                  |
-      | 3      | Lorem ipsum                  |
+      | Number | Description                   |
+      | 1      | Lorem ipsum                   |
+      | 2      | Lorem ipsum                   |
+      | 3      | Lorem ipsum                   |
       | 4      | Lorem ipsum\nsome description |
       | 5      | Lorem ipsum\nsome description |
       | 6      | Lorem ipsum\nsome description |
